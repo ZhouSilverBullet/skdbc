@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.hackson.skdbc"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+//            abiFilters "armeabi", "armeabi-v7a", "x86"//, "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+            abiFilters "armeabi-v7a"/*, "x86", "x86_64"*/
+//            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+    }
+    //--------------打包----------------
+    signingConfigs {
+        signconfig {
+            storeFile file('../GrardianAppKey.keystore')
+            storePassword 'zhidian020166'
+            keyAlias 'zhidian'
+            keyPassword 'zhidian020166'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signconfig
+        }
+
+        debug {
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.signconfig
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+    //高德地图
+    implementation 'com.amap.api:3dmap:6.8.0'
+    implementation 'com.amap.api:map2d:5.2.0'
+    implementation 'com.amap.api:search:6.5.0.1'
+    implementation 'com.amap.api:location:4.5.1'
+
+    implementation 'com.github.addappcn:android-pickers:1.0.3'
+    //选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
