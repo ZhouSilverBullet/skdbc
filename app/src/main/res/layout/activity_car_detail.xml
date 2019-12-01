@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/iv_top"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/car_icon" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/iv_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="Sokoda"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="类型：新速派"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_people_num"
+        app:layout_constraintTop_toBottomOf="@id/tv_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="座位：5"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_people_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="颜色：穹顶金"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="闲置时间：（共2天）2019/12/01~2019/12/03"
+        android:textSize="14sp" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tv_time"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="介绍：德系精品中高级轿车，2018年购买。 2019年12月01做完保养，状态正常，我的第三者险100万。车内整洁舒适，空间宽敞，后备箱空间较大，油量1/2。" />
+
+    <Button
+        android:id="@+id/btn_zuche"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="租车"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/top_btn_bg"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -99,7 +99,8 @@ public class HomeFragment extends Fragment implements LocationSource, AMapLocati
             @Override
             public void onClick(View v) {
                 if (bottomDialogView == null) {
-                    bottomDialogView = new BottomDialogView(getActivity(), new BottomDialogView.onConfirmClick() {
+                    bottomDialogView = new BottomDialogView(getActivity(), true);
+                    bottomDialogView.setConfirmClickListener(new BottomDialogView.onConfirmClick() {
                         @Override
                         public void onClick(String time) {
                             HomeFragment.this.time = time;

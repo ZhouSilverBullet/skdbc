@@ -5,7 +5,9 @@
     <color name="colorAccent">#ffffff</color>
 
     <color name="textColor">#333333</color>
+    <color name="textHintColor">#666666</color>
     <color name="white">#ffffff</color>
     <color name="blue">#2593E7</color>
+    <color name="green">#118721</color>
     <color name="transparent">#00000000</color>
 </resources>
